@@ -7,15 +7,29 @@
                 background: black;
                 color: white;
             }
+            div.input {
+                position: absolute;
+                bottom: 5px;
+                left: 0;
+            }
+            div.input span {
+                color: greenyellow;
+                font-size: 19px;
+            }
         </style>
     </head>
     <body>
-        <form method='get' action='console.html'>
-            <span>> </span><input type='text'>
-            <input type='submit' style='display: none;'>
-        </form>
+        <div class="log"></div>
+        <div class="input">
+            <span>> </span>
+            <form onsubmit='submit(this)'>
+                <input type='text'>
+            </form>
+        </div>
         <script>
-            // Yo
+            function submit(this) {
+                console.log(this.getElementsByTagName('input')[0].value);
+            }
         </script>
     </body>
 </html>
