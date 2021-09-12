@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Home</title>
+    <title>Viserest: Coop's Pizzeria</title>
     <style>
       body {
         margin: 0;
@@ -8,12 +8,41 @@
         font-size: 14px;
       }
       
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown h1 {
+        cursor: pointer;
+        margin: 10px 0;
+        text-align: center;
+      }
+      .dropdown div {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        text-align: center;
+      }
+      .dropdown div:before, .dropdown div:after {
+        display: block;
+        content: '';
+        width: 80%;
+        margin: auto;
+        border-top: 1px solid black;
+      }
+      .dropdown div:after {
+        border-top: none;
+        border-bottom: 1px solid black;
+      }
+      .dropdown:hover div {
+        display: block;
+      }
+      
       nav {
         font-size: 15px;
       }
-      nav h1 {
+      nav div {
         display: inline-block;
-        margin: 10px 30px 10px 20px;
       }
       nav a {
         display: inline-block;
@@ -40,10 +69,18 @@
   </head>
   <body>
     <nav>
-      <h1>Viserest</h1>
-      <a href='/'>Home</a>
-      <a href='/commercial-signs'>Commercial Signs</a>
-      <a href='/coops-pizzeria'>Coop's Pizzeria</a>
+      <div class='dropdown' style='width:170px;'>
+        <h1>Commercial Signs</h1>
+        <div>
+          <a href='/'>Home</a>
+          <a href='/commercial-signs'>Commercial Signs</a>
+          <a href='/coops-pizzeria'>Coop's Pizzeria</a>
+        </div>
+      </div>
+      <a href='/commercial-signs'>Dashboard</a>
+      <a href='/commercial-signs/designer'>Custom Designer</a>
+      <a href='/commercial-signs/products'>Our Products</a>
+      <a href='/commercial-signs/cart'>Cart</a>
     </nav>
     <footer>
       <span>Made by Seth Cooper</span>
