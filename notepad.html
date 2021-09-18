@@ -63,7 +63,7 @@
       for (i = 0; i < 10; i++) {
         cards.innerHTML += '<div><h1>Videos</h1><p>Videos that I want to save.</p></div>';
         cards.getElementsByTagName('div')[i].onclick = () => {
-          fetch('mongodb+srv://test:<password>@cluster0.fkzfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+          fetch('mongodb+srv://test:VDUFgCKwfDdtwrSZ@cluster0.fkzfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
             .then(response => response.json())
             .then(result => console.log(result);
         }
