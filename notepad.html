@@ -1,25 +1,73 @@
 <html>
   <head>
     <title>Viserest: Notepad</title>
-    <link href='/static/body.css' rel='stylesheet'>
+    <style>
+      body {
+        margin: 0;
+        font-family: monospace;
+        font-size: 14px;
+      }
+      
+      /* Navigation */
+      nav {
+        font-size: 15px;
+      }
+      nav h1 {
+        display: inline-block;
+      }
+      nav a {
+        display: inline-block;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+      }
+      nav a:after {
+        display: block;
+        content: '';
+        width: 0;
+        border-bottom: 3px solid red;
+        transition: width 0.25s ease-out;
+      }
+      nav a:hover:after {
+        width: 100%;
+      }
+      
+      /* Main Content */
+      article div {
+      }
+      
+      /* Footer */
+      footer {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
   </head>
   <body>
     <nav>
-      <div class='dropdown' style='width:170px;'>
-        <h1>Home</h1>
-        <div>
-          <a href='/'>Home</a>
-          <a href='/commercial-signs'>Commercial Signs</a>
-          <a href='/coops-pizzeria'>Coop's Pizzeria</a>
-        </div>
-      </div>
+      <h1>Home</h1>
       <a href='/'>Dashboard</a>
       <a href='/terminal'>Terminal</a>
       <a href='/divide'>Divide</a>
     </nav>
-    <article id='content'></article>
+    <article>
+      <div id='content'></div>
+      <div id='cards'></div>
+    </article>
     <footer>
       <span>Made by Seth Cooper</span>
     </footer>
+    <script>
+      var content = document.getElementById('content');
+      var cards = document.getElementById('cards');
+      for (i = 0; i < 10; i++) {
+        cards.innerHTML += '<div><h1>Videos</h1><p>Videos that I want to save.</p></div>';
+        cards.getElementsByTagName('div')[i].onclick = () => {
+          fetch('mongodb+srv://test:<password>@cluster0.fkzfz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+            .then(response => response.json())
+            .then(result => console.log(result);
+        }
+      }
+    </script>
   </body>
 </html>
