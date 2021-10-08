@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Watch List</title>
+    <style>
+      body {
+        margin: 0;
+        font-size: 14px;
+        font-family: monospace;
+      }
+      nav a {
+        display: inline-block;
+        width: 100px;
+        border-bottom: 3px solid transparent;
+        padding: 10px;
+      }
+      nav a:hover {
+        border-bottom: 3px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href='/'>Home</a>
+      <a href='/watch'>Watch</a>
+    </nav>
+    <article></article>
+    <footer>
+      <span>Made by Viserest</span>
+    </footer>
+    <script>
+      const x = fetch('https://api.twitch.tv/helix/streams', headers={'Authorization':'Bearer f838h2uv2cpshm1ml17gdg1ckg9qwt','Client-Id':'ekdptwbw5oon424wvq1hdg34fc4awj'});
+      console.log(x);
+    </script>
+  </body>
+</html>
