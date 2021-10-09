@@ -29,6 +29,7 @@
       }
       #user div {
         width: 50%;
+        height: 1200px;
       }
       #users div {
         width: 100px;
@@ -56,13 +57,13 @@
       const users = await fetch('https://api.twitch.tv/helix/users/follows?from_id=423975684', {headers: new Headers({
         'Authorization': 'Bearer f838h2uv2cpshm1ml17gdg1ckg9qwt',
         'Client-Id': 'ekdptwbw5oon424wvq1hdg34fc4awj'
-      })});
+      })}).json();
       var box = document.getElementById('users');
-      for (i in users.json()['data']) {
+      for (i in users['data']) {
         var element = document.createElement('div');
         element.innerHTML = i.to_login`;
         box.appendChild(element);
-      }
+      };
     </script>
   </body>
 </html>
