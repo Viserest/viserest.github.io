@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Our Products</title>
+    <style>
+      body {
+        margin: 0;
+        font-size: 14px;
+        font-family: monospace;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+      }
+      nav a {
+        display: inline-block;
+        width: 70px;
+        color: #282828;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+        padding: 15px;
+      }
+      nav a:hover {
+        color: #464646;
+        border-bottom: 3px solid red;
+      }
+      nav a.active {
+        color: #464646;
+        border-bottom: 3px solid blue;
+      }
+      article {
+        margin-top: 50px;
+      }
+      footer p {
+        margin: 5px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href='/'>Home</a>
+      <a href='/watch'>Watch</a>
+      <a href='/products' class='active'>Products</a>
+    </nav>
+    <article>
+      <div id='featured'></div>
+      <div id='all'></div>
+    </article>
+    <footer>
+      <span>Made by Viserest</span>
+    </footer>
+    <script type='text/javascript'>
+      var response = fetch('https://viserest.github.io/private/products.json');
+      console.log(response);
+    </script>
+  </body>
+</html>
