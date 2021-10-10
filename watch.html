@@ -8,7 +8,10 @@
         font-family: monospace;
       }
       nav {
-        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
       }
       nav a {
         display: inline-block;
@@ -51,7 +54,7 @@
     </style>
   </head>
   <body>
-    <nav id='nav'>
+    <nav>
       <a href='/'>Home</a>
       <a href='/watch'>Watch</a>
     </nav>
@@ -66,16 +69,6 @@
       <span>Made by Viserest</span>
     </footer>
     <script type='text/javascript'>
-      // Sticky nav
-      var nav = document.getElementById('nav');
-      var sticky = nav.offsetTop;
-      window.onscroll = () => {
-        if (window.pageYOffset >= sticky) {
-          nav.classList.add('sticky');
-        } else {
-          nav.classList.remove('sticky');
-        }
-      }
       // get users
       const users = async function() {
         return await fetch('https://api.twitch.tv/helix/users/follows?from_id=423975684', {headers: new Headers({
