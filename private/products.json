@@ -1,1 +1,42 @@
-[]
+[
+  {
+    'id': 652014387,
+    'name': "Let's Go Brandon",
+    'price': 19.99,
+    'discount': 0,
+    'image': '',
+    'quantity': 0
+  },
+  {
+    'id': 45686785,
+    'name': "Let's Go Brandon",
+    'price': 19.99,
+    'discount': 0,
+    'image': '',
+    'quantity': 0
+  },
+  {
+    'id': 0876753685,
+    'name': "Let's Go Brandon",
+    'price': 19.99,
+    'discount': 0,
+    'image': '',
+    'quantity': 0
+  },
+  {
+    'id': 357634753456,
+    'name': "Let's Go Brandon",
+    'price': 19.99,
+    'discount': 0,
+    'image': '',
+    'quantity': 0
+  },
+  {
+    'id': 8678579,
+    'name': "Let's Go Brandon",
+    'price': 19.99,
+    'discount': 0,
+    'image': '',
+    'quantity': 0
+  }
+]
