@@ -42,9 +42,14 @@
         margin: 5px 0;
       }
       #all div {
-        width: 230px;
-        height: 120px;
-        border: 1px solid #646464;
+        width: 260px;
+        height: 200px;
+      }
+      #all p {
+        margin: 2px;
+      }
+      #all div.soldout {
+        opacity: .75;
       }
     </style>
   </head>
@@ -66,7 +71,8 @@
         var content = document.getElementById('all');
         data.forEach(v => {
           var element = document.createElement('div');
-          element.innerHTML = `<img src='https://viserest.github.io/private/images/${v.id}.png'><p>${v.name}</p><p>${v.price}</p>`;
+          element.innerHTML = `<p>${v.name}</p><p>$${v.price}</p>`;
+          element.style.background = url(`https://viserest.github.io/private/images/${v.id}.png`);
           if (v.quantity == 0) element.classList.add('soldout');
           content.appendChild(element);
         });
