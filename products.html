@@ -41,8 +41,6 @@
       footer p {
         margin: 5px 0;
       }
-      #all {
-      }
       #all div {
         width: 230px;
         height: 120px;
@@ -58,11 +56,7 @@
     </nav>
     <article>
       <div id='featured'></div>
-      <div id='all'>
-        <img>
-        <p>Let's Go Brandon</p>
-        <p class='discounted'><span>$19.99</span>$14.99</p>
-      </div>
+      <div id='all'></div>
     </article>
     <footer>
       <p>Made by Viserest</p>
@@ -72,7 +66,7 @@
         var content = document.getElementById('all');
         data.forEach(v => {
           var element = document.createElement('div');
-          element.innerHTML = `<img src='https://viserest.github.io/private/images/${v.id}.png><p>${v.name}</p><p>${v.price}</p>`;
+          element.innerHTML = `<img src='https://viserest.github.io/private/images/${v.id}.png'><p>${v.name}</p><p>${v.price}</p>`;
           if (v.quantity == 0) element.classList.add('soldout');
           content.appendChild(element);
         });
