@@ -72,7 +72,7 @@
         data.forEach(v => {
           var element = document.createElement('div');
           element.innerHTML = `<p>${v.name}</p><p>$${v.price}</p>`;
-          element.style.background = url(`https://viserest.github.io/private/images/${v.id}.png`);
+          element.style.background = `url(https://viserest.github.io/private/images/${v.id}.png)`;
           if (v.quantity == 0) element.classList.add('soldout');
           content.appendChild(element);
         });
