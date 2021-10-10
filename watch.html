@@ -39,7 +39,7 @@
         text-align: center;
       }
       #user div {
-        display: inline-block;
+        float: left;
         width: 50%;
         height: 1200px;
       }
@@ -71,7 +71,7 @@
       var sticky = nav.offsetTop;
       window.onscroll = () => {
         if (window.pageYOffset >= sticky) {
-          nav.classList.add(sticky);
+          nav.classList.add('sticky');
         } else {
           nav.classList.remove('sticky');
         }
