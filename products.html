@@ -34,9 +34,12 @@
       article {
         margin-top: 50px;
       }
+      footer {
+        width: 100%;
+        text-align: center;
+      }
       footer p {
         margin: 5px 0;
-        text-align: center;
       }
     </style>
   </head>
@@ -51,11 +54,11 @@
       <div id='all'></div>
     </article>
     <footer>
-      <span>Made by Viserest</span>
+      <p>Made by Viserest</p>
     </footer>
     <script type='text/javascript'>
       var response = fetch('https://viserest.github.io/private/products.json');
-      console.log(response);
+      console.log(response.text());
     </script>
   </body>
 </html>
