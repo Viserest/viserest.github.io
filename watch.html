@@ -7,6 +7,9 @@
         font-size: 14px;
         font-family: monospace;
       }
+      nav {
+        overflow: hidden;
+      }
       nav a {
         display: inline-block;
         width: 70px;
@@ -20,8 +23,16 @@
         color: #464646;
         border-bottom: 3px solid red;
       }
+      nav a.active {
+        color: #464646;
+        border-bottom: 3px solid blue;
+      }
+      nav.sticky {
+        position: fixed;
+        top: 0;
+      }
       footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -40,7 +51,7 @@
     </style>
   </head>
   <body>
-    <nav>
+    <nav id='nav'>
       <a href='/'>Home</a>
       <a href='/watch'>Watch</a>
     </nav>
@@ -55,6 +66,17 @@
       <span>Made by Viserest</span>
     </footer>
     <script type='text/javascript'>
+      // Sticky nav
+      var nav = document.getElementById('nav');
+      var sticky = nav.offsetTop;
+      window.onscroll = () => {
+        if (window.pageYOffset >= sticky) {
+          nav.classList.add(sticky);
+        } else {
+          nav.classList.remove('sticky');
+        }
+      }
+      // get users
       const users = async function() {
         return await fetch('https://api.twitch.tv/helix/users/follows?from_id=423975684', {headers: new Headers({
           'Authorization': 'Bearer f838h2uv2cpshm1ml17gdg1ckg9qwt',
