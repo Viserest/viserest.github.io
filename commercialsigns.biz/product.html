@@ -43,6 +43,8 @@
               price = p.price,
               images = p.images;
         
+        console.log(params, data, p);
+        
         $('title').text(name);
         $('desc').text(desc);
         $('color').html(colors.map(v=>'<option>'+v+'</option>'));
