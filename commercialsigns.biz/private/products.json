@@ -1,1 +1,10 @@
-{}
+{
+  "4574567":{
+    "name":"I did this - Joe Biden Shirt",
+    "description":"I did this in red and black with Joe Biden pointing up.",
+    "colors":["white","red","green","black"],
+    "price":20.00,
+    "discount":0,
+    "images":[]
+  }
+}
