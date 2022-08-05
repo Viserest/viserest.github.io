@@ -1,4 +1,53 @@
 <html>
-  <head></head>
-  <body></body>
+  <head>
+    <title> - Commercial Signs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <styles>
+      nav,footer {
+        background: rgb(80,80,80);
+        color: white;
+        height: 170px;
+      }
+      #images {
+        width: 400px;
+        height: 400px;
+        background: rgb(200,200,200);
+      }
+      #main {
+        width: 300px;
+      }
+    </styles>
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <div id='images'></div>
+      <div id='main'>
+        <h1 id='title'></h1>
+        <p id='desc'></p>
+        <select id='color'></select>
+        <h3 id='price'></h3>
+      </div>
+    </main>
+    <footer></footer>
+    <script>
+      const url = 'viserest.github.io/commercialsigns.biz';
+      const params = new URLSearchParams(location.search);
+      
+      fetch(url+'/private/products.json').then(res => res.json).then(data => {
+        const p = data[params.id];
+        const name = p.name,
+              desc = p.description,
+              colors = p.colors,
+              discount = p.discount,
+              price = p.price,
+              images = p.images;
+        
+        $('title').text(name);
+        $('desc').text(desc);
+        $('color').html(colors.map(v=>'<option>'+v+'</option>'));
+        $('price').text((discount)?price:discount);
+      });
+    </script>
+  </body>
 </html>
